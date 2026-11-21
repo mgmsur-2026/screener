@@ -25,5 +25,3 @@ jobs:
           git commit -m "Resultado $(date +%F)" || echo "Sin cambios"
           git pull --rebase
           git push
-
-
