@@ -19,6 +19,7 @@ jobs:
         run: |
           mkdir -p historial
           cp resultado_screener.csv "historial/$(date +%F).csv"
+          python -c "import json,glob,os;print(json.dumps(sorted(os.path.basename(f)[:-4] for f in glob.glob('historial/*.csv'))))" > historial/index.json
           git config user.name "screener-bot"
           git config user.email "bot@users.noreply.github.com"
           git add resultado_screener.csv historial
